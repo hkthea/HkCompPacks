@@ -3,3 +3,5 @@ examples/*
 lib/*
 assets/*
 src/backup/*
+src/assets/*
+*.png
