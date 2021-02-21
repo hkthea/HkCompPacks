@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIG>
+  <Package Version="4">
+    <PathDelim Value="\"/>
+    <Name Value="HKCompPacks"/>
+    <Type Value="RunAndDesignTime"/>
+    <CompilerOptions>
+      <Version Value="11"/>
+      <PathDelim Value="\"/>
+      <SearchPaths>
+        <OtherUnitFiles Value="src"/>
+        <UnitOutputDirectory Value="lib\$(TargetCPU)-$(TargetOS)"/>
+      </SearchPaths>
+    </CompilerOptions>
+    <Files Count="12">
+      <Item1>
+        <Filename Value="src\hkstringgrid.pas"/>
+        <HasRegisterProc Value="True"/>
+        <UnitName Value="HKStringGrid"/>
+      </Item1>
+      <Item2>
+        <Filename Value="src\hkcomppackstypes.pas"/>
+        <UnitName Value="HKCompPacksTypes"/>
+      </Item2>
+      <Item3>
+        <Filename Value="src\requester.pas"/>
+        <UnitName Value="Requester"/>
+      </Item3>
+      <Item4>
+        <Filename Value="src\hkconnection.pas"/>
+        <HasRegisterProc Value="True"/>
+        <AddToUsesPkgSection Value="False"/>
+        <UnitName Value="HKConnection"/>
+      </Item4>
+      <Item5>
+        <Filename Value="src\hklogfile.pas"/>
+        <HasRegisterProc Value="True"/>
+        <UnitName Value="HKLogFile"/>
+      </Item5>
+      <Item6>
+        <Filename Value="src\peekingchromium.pas"/>
+        <HasRegisterProc Value="True"/>
+        <AddToUsesPkgSection Value="False"/>
+        <UnitName Value="PeekingChromium"/>
+      </Item6>
+      <Item7>
+        <Filename Value="src\authmodel.pas"/>
+        <HasRegisterProc Value="True"/>
+        <UnitName Value="AuthModel"/>
+      </Item7>
+      <Item8>
+        <Filename Value="src\hkconfig.pas"/>
+        <UnitName Value="HKConfig"/>
+      </Item8>
+      <Item9>
+        <Filename Value="src\hkmodel.pas"/>
+        <HasRegisterProc Value="True"/>
+        <UnitName Value="HKModel"/>
+      </Item9>
+      <Item10>
+        <Filename Value="src\hkpaginationmodel.pas"/>
+        <HasRegisterProc Value="True"/>
+        <UnitName Value="HKPaginationModel"/>
+      </Item10>
+      <Item11>
+        <Filename Value="src\hkpaginantion.pas"/>
+        <HasRegisterProc Value="True"/>
+        <UnitName Value="HKPaginantion"/>
+      </Item11>
+      <Item12>
+        <Filename Value="src\hksearchheader.pas"/>
+        <HasRegisterProc Value="True"/>
+        <AddToUsesPkgSection Value="False"/>
+        <UnitName Value="HKSearchHeader"/>
+      </Item12>
+    </Files>
+    <RequiredPkgs Count="3">
+      <Item1>
+        <PackageName Value="indylaz"/>
+      </Item1>
+      <Item2>
+        <PackageName Value="CEF4Delphi_Lazarus"/>
+      </Item2>
+      <Item3>
+        <PackageName Value="IDEIntf"/>
+      </Item3>
+    </RequiredPkgs>
+    <UsageOptions>
+      <UnitPath Value="$(PkgOutDir)"/>
+    </UsageOptions>
+    <PublishOptions>
+      <Version Value="2"/>
+      <UseFileFilters Value="True"/>
+    </PublishOptions>
+  </Package>
+</CONFIG>
