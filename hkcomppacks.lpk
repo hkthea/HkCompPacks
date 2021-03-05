@@ -8,11 +8,13 @@
       <Version Value="11"/>
       <PathDelim Value="\"/>
       <SearchPaths>
-        <OtherUnitFiles Value="src"/>
+        <IncludeFiles Value="src\iconv"/>
+        <OtherUnitFiles Value="src;src\iconv"/>
         <UnitOutputDirectory Value="lib\$(TargetCPU)-$(TargetOS)"/>
       </SearchPaths>
     </CompilerOptions>
-    <Files Count="12">
+    <Version Build="4"/>
+    <Files Count="13">
       <Item1>
         <Filename Value="src\hkstringgrid.pas"/>
         <HasRegisterProc Value="True"/>
@@ -38,52 +40,59 @@
         <UnitName Value="HKLogFile"/>
       </Item5>
       <Item6>
-        <Filename Value="src\peekingchromium.pas"/>
-        <HasRegisterProc Value="True"/>
-        <AddToUsesPkgSection Value="False"/>
-        <UnitName Value="PeekingChromium"/>
-      </Item6>
-      <Item7>
         <Filename Value="src\authmodel.pas"/>
         <HasRegisterProc Value="True"/>
         <UnitName Value="AuthModel"/>
-      </Item7>
-      <Item8>
+      </Item6>
+      <Item7>
         <Filename Value="src\hkconfig.pas"/>
         <UnitName Value="HKConfig"/>
-      </Item8>
-      <Item9>
+      </Item7>
+      <Item8>
         <Filename Value="src\hkmodel.pas"/>
         <HasRegisterProc Value="True"/>
         <UnitName Value="HKModel"/>
-      </Item9>
-      <Item10>
+      </Item8>
+      <Item9>
         <Filename Value="src\hkpaginationmodel.pas"/>
         <HasRegisterProc Value="True"/>
         <UnitName Value="HKPaginationModel"/>
-      </Item10>
-      <Item11>
+      </Item9>
+      <Item10>
         <Filename Value="src\hkpaginantion.pas"/>
         <HasRegisterProc Value="True"/>
         <UnitName Value="HKPaginantion"/>
-      </Item11>
-      <Item12>
+      </Item10>
+      <Item11>
         <Filename Value="src\hksearchheader.pas"/>
         <HasRegisterProc Value="True"/>
         <AddToUsesPkgSection Value="False"/>
         <UnitName Value="HKSearchHeader"/>
+      </Item11>
+      <Item12>
+        <Filename Value="src\hkselfupdater.pas"/>
+        <HasRegisterProc Value="True"/>
+        <UnitName Value="HKSelfUpdater"/>
       </Item12>
+      <Item13>
+        <Filename Value="src\hksqlstringgrid.pas"/>
+        <HasRegisterProc Value="True"/>
+        <UnitName Value="HKSqlStringGrid"/>
+      </Item13>
     </Files>
-    <RequiredPkgs Count="3">
+    <RequiredPkgs Count="4">
       <Item1>
-        <PackageName Value="indylaz"/>
+        <PackageName Value="lr_zeosdb"/>
       </Item1>
       <Item2>
-        <PackageName Value="CEF4Delphi_Lazarus"/>
+        <PackageName Value="dcpcrypt"/>
       </Item2>
       <Item3>
-        <PackageName Value="IDEIntf"/>
+        <PackageName Value="indylaz"/>
       </Item3>
+      <Item4>
+        <PackageName Value="IDEIntf"/>
+      </Item4>
     </RequiredPkgs>
     <UsageOptions>
       <UnitPath Value="$(PkgOutDir)"/>

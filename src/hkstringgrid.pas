@@ -166,6 +166,7 @@ implementation
 
 procedure Register;
 begin
+  {$I hkstringgrid_icon.lrs}
   RegisterComponents('HKCompPacks',[THKStringGrid]);
 end;
 

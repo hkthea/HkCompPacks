@@ -9,8 +9,8 @@ interface
 
 uses
   HKStringGrid, HKCompPacksTypes, Requester, HKConnection, HKLogFile, 
-  PeekingChromium, AuthModel, HKConfig, HKModel, HKPaginationModel, 
-  HKPaginantion, HKSearchHeader, LazarusPackageIntf;
+  AuthModel, HKConfig, HKModel, HKPaginationModel, HKPaginantion, 
+  HKSearchHeader, HKSelfUpdater, HKSqlStringGrid, LazarusPackageIntf;
 
 implementation
 
@@ -19,12 +19,13 @@ begin
   RegisterUnit('HKStringGrid', @HKStringGrid.Register);
   RegisterUnit('HKConnection', @HKConnection.Register);
   RegisterUnit('HKLogFile', @HKLogFile.Register);
-  RegisterUnit('PeekingChromium', @PeekingChromium.Register);
   RegisterUnit('AuthModel', @AuthModel.Register);
   RegisterUnit('HKModel', @HKModel.Register);
   RegisterUnit('HKPaginationModel', @HKPaginationModel.Register);
   RegisterUnit('HKPaginantion', @HKPaginantion.Register);
   RegisterUnit('HKSearchHeader', @HKSearchHeader.Register);
+  RegisterUnit('HKSelfUpdater', @HKSelfUpdater.Register);
+  RegisterUnit('HKSqlStringGrid', @HKSqlStringGrid.Register);
 end;
 
 initialization

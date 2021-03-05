@@ -82,7 +82,6 @@ type
       receivedContentLength: Int64); override;
   public
     constructor Create(AOwner: TComponent); override;
-    destructor Destroy; override;
     function AddFilter(aUrl:String):Integer;
     procedure GetResourceResponseFilter(const aBrowser: ICefBrowser;
       const frame: ICefFrame; const request: ICefRequest;
@@ -213,6 +212,7 @@ constructor TMyResponseFilter.Create;
 begin
   //inherited Create;
   FStream:=TMemoryStream.Create;
+
 end;
 
 destructor TMyResponseFilter.Destroy;
@@ -226,7 +226,6 @@ begin
   Init:=True;
   Complete:=False;
   FStream.Clear;
-  fFilter:=nil;
   fFilter:=TCustomResponseFilter.Create;
   fFilter.OnFilter:=@DoFilter;
 end;
@@ -403,21 +402,6 @@ begin
   FResponseFilterList:=TList.Create;
 end;
 
-destructor TPeekingChromium.Destroy;
-var
-  aaa: Integer;
-  temp: TMyResponseFilter;
-begin
-  for aaa:=0 to FResponseFilterList.Count-1 do
-  begin
-    temp:=TMyResponseFilter(FResponseFilterList[aaa]);
-    FreeAndNil(temp);
-  end;
-  FResponseFilterList.Clear;
-  FResponseFilterList.Free;
-  inherited Destroy;
-end;
-
 function TPeekingChromium.AddFilter(aUrl: String): Integer;
 var aaa:Integer;
   Found: Boolean;
@@ -444,4 +428,3 @@ begin
 end;
 
 end.
-

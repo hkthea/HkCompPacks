@@ -34,8 +34,9 @@ type
     function doFilterData(aRow: TJSONObject): Boolean;
   public
     procedure Refresh;
-    function CreateNew(aData:TJSONObject):Boolean;
-    function UpdateData(aData:TJSONObject; aId:String):Boolean;
+    function CreateNew(aData: TJSONObject; withNotif: Boolean=True): Boolean;
+    function UpdateData(aData: TJSONObject; aId: String; withNotif: Boolean=True
+      ): Boolean;
     procedure Filter(aStr:String);
     procedure ClearFilter;
     destructor Destroy; override;
@@ -164,7 +165,7 @@ begin
   end;
 end;
 
-function THKModel.CreateNew(aData: TJSONObject): Boolean;
+function THKModel.CreateNew(aData: TJSONObject; withNotif:Boolean=True): Boolean;
 var
   con: TJsonRequester;
   resp: TJSONData;
@@ -178,7 +179,7 @@ begin
       resp:=con.JsonPost(Document, aData);
       if resp<>nil then
       begin
-        ShowMessage('Create Data Success');
+        if withNotif then ShowMessage('Create Data Success');
         Result:=True;
         Refresh;
       end;
@@ -189,7 +190,7 @@ begin
   end;
 end;
 
-function THKModel.UpdateData(aData: TJSONObject; aId: String): Boolean;
+function THKModel.UpdateData(aData: TJSONObject; aId: String; withNotif:Boolean=True): Boolean;
 var
   con: TJsonRequester;
   resp: TJSONData;
@@ -204,7 +205,7 @@ begin
       resp:=con.JsonPost(Document, aData);
       if resp<>nil then
       begin
-        ShowMessage('Edit Data Success');
+        if withNotif then ShowMessage('Edit Data Success');
         Result:=True;
         Refresh;
       end;

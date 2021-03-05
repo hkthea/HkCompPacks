@@ -23,7 +23,7 @@ implementation
 function GetJsonStringValue(aJson: TJSONObject; aPath: String): String;
 begin
   Result:='';
-  if aJson.FindPath(aPath)<>nil then
+  if (aJson.FindPath(aPath)<>nil)and(not aJson.FindPath(aPath).IsNull) then
   begin
     Result:=aJson.FindPath(aPath).AsString;
   end;
@@ -34,7 +34,16 @@ begin
   Result:=-1;
   if aJson.FindPath(aPath)<>nil then
   begin
-    Result:=aJson.FindPath(aPath).AsInteger;
+    try
+      if not aJson.FindPath(aPath).IsNull then
+      begin
+        Result:=aJson.FindPath(aPath).AsInteger;
+      end
+      else
+        Result:=0;
+    except
+      Result:=0;
+    end;
   end;
 end;
 

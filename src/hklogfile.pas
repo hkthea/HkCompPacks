@@ -18,7 +18,7 @@ type
     FDirPath: String;
     FLogExtension: String;
     FLogFormat: String;
-    FCSession:TCriticalSection;
+    //FCSession:TCriticalSection;
     FLogLevel: Integer;
     procedure SetDirPath(AValue: String);
     procedure SetLogExtension(AValue: String);
@@ -83,12 +83,12 @@ end;
 
 constructor THKLogFile.Create(AOwner: TComponent);
 begin
+  inherited Create(AOwner);
   LogLevel:=1;
   LogFormat:='YYYYMMDD';
   DirPath:='log';
   LogExtension:='log';
   FAbsPath:=ExtractFileDir(ParamStr(0))+PathDelim+DirPath+PathDelim;
-  inherited Create(AOwner);
 end;
 
 procedure THKLogFile.WriteLog(aMessage: String; aDebugType: TDebugType);
@@ -102,7 +102,7 @@ begin
     Exit;
   end;
 
-  FCSession.Enter;
+  //FCSession.Enter;
   try
     logFile:=FAbsPath+'Log_'+FormatDateTime(LogFormat, Now)+ExtensionSeparator+LogExtension;
 
@@ -116,18 +116,18 @@ begin
     Flush(Log);
   finally
     CloseFile(Log);
-    FCSession.Leave;
+    //FCSession.Leave;
   end;
 end;
 
 procedure THKLogFile.InitCs;
 begin
-  FCSession:=TCriticalSection.Create;
+  //FCSession:=TCriticalSection.Create;
 end;
 
 destructor THKLogFile.Destroy;
 begin
-  if FCSession<>nil then FCSession.Free;
+  //if FCSession<>nil then FCSession.Free;
   inherited Destroy;
 end;
 

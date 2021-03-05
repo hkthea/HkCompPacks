@@ -379,11 +379,15 @@ function TJsonRequester.JsonPost(aDoc: String; data: TJSONObject): TJSONData;
 var
   stream: TStringStream;
   resp: String;
+  strJson: String;
+  len: Integer;
 begin
   Result:=nil;
   Prepare;
-  doDebug(Format('POST Command URL "%s" Body: %s',[aDoc, data.AsJSON]), DTInfo3);
-  stream:=TStringStream.Create(data.AsJSON);
+  strJson:=data.AsJSON;
+  len:=Length(strJson);
+  doDebug(Format('POST Command URL "%s" Body: %s',[aDoc, strJson]), DTInfo3);
+  stream:=TStringStream.Create(strJson);
   doProcessRequestStart;
   try
     try
